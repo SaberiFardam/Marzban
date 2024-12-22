@@ -3,7 +3,7 @@ from typing import Union
 
 import jinja2
 
-from config import CUSTOM_TEMPLATES_DIRECTORY
+from config import CUSTOM_TEMPLATES_DIRECTORY, NEW_TEMPLATES_DIRECTORY
 
 from .filters import CUSTOM_FILTERS
 
@@ -11,6 +11,9 @@ template_directories = ["app/templates"]
 if CUSTOM_TEMPLATES_DIRECTORY:
     # User's templates have priority over default templates
     template_directories.insert(0, CUSTOM_TEMPLATES_DIRECTORY)
+elif NEW_TEMPLATES_DIRECTORY:
+    # User's new templates have priority over two temolates
+    template_directories.insert(1, NEW_TEMPLATES_DIRECTORY)
 
 env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_directories))
 env.filters.update(CUSTOM_FILTERS)

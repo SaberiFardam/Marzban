@@ -37,6 +37,10 @@ First of all, you need to set a directory for all of your templates (home, subsc
 ```shell
 CUSTOM_TEMPLATES_DIRECTORY="/var/lib/marzban/templates/"
 ```
+```shell
+NEW_TEMPLATES_DIRECTORY="/var/lib/marzban/new_templates/"
+```
+
 Make sure you put all of your templates in this folder.\
 If you are using Docker, make sure Docker has access to this folder.\
 Then, we need to make a directory for our Clash template.
